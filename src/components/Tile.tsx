@@ -3,6 +3,7 @@
 
 // Tile component using the defined type
 import React from "react";
+import { ImageData } from "./LightBox";
 
  interface TileProps {
   image: ImageData;

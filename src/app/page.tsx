@@ -1,7 +1,7 @@
 import { GetImage } from "@/components/GetImage";
 import { Header } from "@/components/Header";
-import LightBox from "@/components/LightBox";
-import { Tile } from "@/components/Tile";
+
+export const runtime = "edge"
 
 export default function Home() {
   return (

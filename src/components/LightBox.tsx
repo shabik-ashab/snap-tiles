@@ -10,7 +10,7 @@ import Tile from "./Tile";
 
 const LightBox:React.FC<ImageProps> = ({images}) => {
   const [open, setOpen] = React.useState(false);
-  const [slides, setSlides] = React.useState([]);
+  const [slides, setSlides] = React.useState<Slide[]>([]);
 
   const handleImageClick = (id: number) => {
     const newImages = images;
@@ -63,13 +63,14 @@ export type ImageData = {
   tags: string;
   webformatURL: string;
   largeImageURL: string;
+  type:string
   views: number;
   likes: number;
 };
 export type Slide = {
-  src:String,
-  width:Number,
-  height: Number 
+  src:string,
+  width:number,
+  height: number 
 }
 
 export interface ImageProps {
