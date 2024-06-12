@@ -4,7 +4,7 @@ export const Header = () => {
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1">
-        <a className="btn btn-ghost text-xl">Photo Matrix</a>
+        <a className="btn btn-ghost text-xl">SnapTiles</a>
       </div>
       <div className="flex-none gap-2">
         <div className="form-control">
