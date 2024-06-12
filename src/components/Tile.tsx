@@ -1,25 +1,19 @@
+"use client"
 // Define the type for the data we are using
-type ImageData = {
-  id: number;
-  tags: string;
-  webformatURL: string;
-  views: number;
-  likes: number;
-};
 
 // Tile component using the defined type
 import React from "react";
-import Image from 'next/image'
 
-interface TileProps {
+ interface TileProps {
   image: ImageData;
+  handleClick: Function;
 }
 
-const Tile: React.FC<TileProps> = ({ image }) => {
+const Tile: React.FC<TileProps> = ({ image, handleClick }) => {
   return (
-    <div className="card w-96 bg-base-100 shadow-xl m-3">
+    <div className="card w-96 bg-base-100 shadow-xl">
       <figure>
-        <img src={image.previewURL} alt={image.tags} height={500} width={500} />
+        <img onClick={async () => await handleClick(image.id)} src={image.webformatURL} alt={image.tags} className="object-cover object-center w-full h-40 max-w-full rounded-lg" />
       </figure>
       <div className="card-body">
         <h2 className="card-title">

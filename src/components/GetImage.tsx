@@ -1,16 +1,14 @@
 import React from 'react'
-import Tile from './Tile'
 import getImages from '@/lib/getImages'
-
+import LightBox from './LightBox'
+import { ImageData } from './LightBox'
 
 export const GetImage = async () => {
   const data = await getImages()
-  const images = data.hits;
+  const images:ImageData[] = data.hits;
   return (
     <div className=''>
-    {images.map((image) => (
-      <Tile key={image.id} image={image} />
-    ))}
+      <LightBox images={images} />
   </div>
   )
 }

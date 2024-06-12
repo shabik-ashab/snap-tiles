@@ -1,5 +1,6 @@
 import { GetImage } from "@/components/GetImage";
 import { Header } from "@/components/Header";
+import LightBox from "@/components/LightBox";
 import { Tile } from "@/components/Tile";
 
 export default function Home() {
@@ -7,7 +8,7 @@ export default function Home() {
     <main >
       <Header />
       <div className=" p-10">
-       {/* <GetImage /> */}
+       <GetImage />
       </div>     
     </main>
   );
