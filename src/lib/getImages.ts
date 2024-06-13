@@ -5,5 +5,8 @@ export default async function getImages(){
     // if(!res.ok){
     //   throw new Error('failed to fetch images')
     // }
+    setTimeout(() => {
+        
+    }, 1000)
     return res.data
 }
