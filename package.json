@@ -13,6 +13,7 @@
     "next": "14.2.4",
     "react": "^18",
     "react-dom": "^18",
+    "use-debounce": "^10.0.1",
     "yet-another-react-lightbox": "^3.19.0"
   },
   "devDependencies": {

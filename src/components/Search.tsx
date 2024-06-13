@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { useDebouncedCallback } from 'use-debounce';
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 
 function Search() {
@@ -7,7 +8,7 @@ function Search() {
   const pathname = usePathname();
   const { replace } = useRouter();
 
-  function handleSearch(term: string) {
+  const handleSearch = useDebouncedCallback((term:string) => {
     const params = new URLSearchParams(searchParams);
     if (term) {
       params.set('query', term);
@@ -15,7 +16,8 @@ function Search() {
       params.delete('query');
     }
     replace(`${pathname}?${params.toString()}`);
-  }
+  }, 300)
+
   return (
     <div>
       <form className="form-control">
