@@ -4,13 +4,13 @@ import LightBox from "./LightBox";
 import { ImageData } from "./LightBox";
 
 
-export const GetImage = async () => {
-  const data = await getImages();
+export const GetImage = async ({query}:{query:string}) => {
+  const data = await getImages(query);
   const images: ImageData[] = data.hits;
+  console.log(query, images[0])
   return (
     <div className="">
         <LightBox images={images} />
-
     </div>
   );
 };
