@@ -12,6 +12,7 @@ import { ImageData } from "./LightBox";
 
 const Tile: React.FC<TileProps> = ({ image, handleClick }) => {
   return (
+    <div className="flex justify-center">
     <div className="card w-96 bg-base-100 shadow-xl">
       <figure>
         <img onClick={async () => await handleClick(image.id)} src={image.webformatURL} alt={image.tags} className="object-cover object-center w-full h-40 max-w-full rounded-lg" />
@@ -27,6 +28,7 @@ const Tile: React.FC<TileProps> = ({ image, handleClick }) => {
           <div className="badge badge-outline">Likes: {image.likes}</div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

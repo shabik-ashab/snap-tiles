@@ -36,7 +36,7 @@ const LightBox:React.FC<ImageProps> = ({images}) => {
 
   return (
     <div className="">
-      <div className="flex flex-wrap gap-5 lg:ml-20 ">
+      <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-5 ">
       {images.map((image) => (
         <Tile key={image.id} image={image} handleClick={handleImageClick} />
       ))}
