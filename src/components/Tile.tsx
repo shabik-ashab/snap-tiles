@@ -15,7 +15,7 @@ const Tile: React.FC<TileProps> = ({ image, handleClick }) => {
     <div className="flex justify-center">
     <div className="card w-96 bg-base-100 shadow-xl">
       <figure>
-        <img onClick={async () => await handleClick(image.id)} src={image.previewURL} alt={image.tags} className="object-cover object-center w-full h-40 max-w-full rounded-lg" />
+        <img onClick={async () => await handleClick(image.id)} src={image.webformatURL} alt={image.tags} className="object-cover object-center w-full h-40 max-w-full rounded-lg" />
       </figure>
       <div className="card-body">
         <h2 className="card-title">
