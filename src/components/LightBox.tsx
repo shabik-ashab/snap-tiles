@@ -42,10 +42,6 @@ const LightBox:React.FC<ImageProps> = ({images}) => {
       ))}
       </div>
 
-      <button type="button" onClick={() => setOpen(true)}>
-        Open Lightbox
-      </button>
-
       <Lightbox
         open={open}
         close={() => setOpen(false)}
@@ -59,6 +55,7 @@ const LightBox:React.FC<ImageProps> = ({images}) => {
 export default LightBox;
 
 export type ImageData = {
+  _id: number;
   id: number;
   tags: string;
   webformatURL: string;
