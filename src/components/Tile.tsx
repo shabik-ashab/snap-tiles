@@ -25,6 +25,24 @@ const Tile: React.FC<TileProps> = ({ image, cachedImages }) => {
     setOpen(!open)
   }
 
+  const handleNext = (id:number, controller:string) => {
+    if(id == 20 && controller == 'next'){
+      id = 1;
+    }
+    else if(id == 1 && controller == 'prev'){
+      id = 20;
+    }
+    else if(controller == 'next'){
+      id += 1
+    }
+    else if(controller == 'prev'){
+      id -=1
+    }
+    
+    const modalImage = cachedImages.find(image => image._id == id)
+    setModalImage(modalImage)
+  }
+
   React.useEffect(() => {
     if(overflow){
       document.body.style.overflow = "hidden";
@@ -59,7 +77,7 @@ const Tile: React.FC<TileProps> = ({ image, cachedImages }) => {
 
         <div>
           {
-            open && <ImageModal image={modalImage} handleClick={handleClick} />
+            open && <ImageModal image={modalImage} handleClick={handleClick} handleNext={handleNext} />
           }
 
 
