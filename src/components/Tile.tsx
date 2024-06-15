@@ -2,8 +2,8 @@
 // Define the type for the data we are using
 
 // Tile component using the defined type
-import React, { Suspense } from "react";
-import { ImageData } from "./LightBox";
+import React from "react";
+import { ImageData } from "./GetImage";
 import ImageModal from "./ImageModal";
 
 interface TileProps {
@@ -12,13 +12,13 @@ interface TileProps {
 }
 
 const Tile: React.FC<TileProps> = ({ image, cachedImages }) => {
-  const [modalImage, setModalImage] = React.useState(image)
+  const [modalImage, setModalImage] = React.useState<ImageData>(image)
   const [open, setOpen] = React.useState(false)
   const [overflow, setOverflow] = React.useState(false)
 
   const handleClick = (id?:number) => {
     if(id){
-      const modalImage = cachedImages.find(image => image._id == id)
+      const modalImage = cachedImages.find(image => image._id == id)!
       setModalImage(modalImage)
     }
     setOverflow(!overflow)
@@ -39,7 +39,7 @@ const Tile: React.FC<TileProps> = ({ image, cachedImages }) => {
       id -=1
     }
     
-    const modalImage = cachedImages.find(image => image._id == id)
+    const modalImage = cachedImages.find(image => image._id == id)!
     setModalImage(modalImage)
   }
 

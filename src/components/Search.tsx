@@ -19,8 +19,8 @@ function Search() {
   }, 300)
 
   return (
-    <div>
-      <form className="form-control">
+    <div className="w-4/5  md:w-2/5 md:ml-16">
+      <form className="form-control w-full">
         <input
           type="text"
           placeholder="Search"

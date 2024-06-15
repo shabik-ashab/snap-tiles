@@ -1,6 +1,5 @@
 import React from "react";
 import getImages from "@/lib/getImages";
-import { ImageData } from "./LightBox";
 import Tile from "./Tile";
 import { unstable_cache } from 'next/cache';
 
@@ -41,5 +40,16 @@ export const GetImage = async ({ query }: { query: string }) => {
       </div>
     </div>
   );
+};
+
+export type ImageData = {
+  _id: number;
+  id: number;
+  tags: string;
+  webformatURL: string;
+  largeImageURL: string;
+  type:string
+  views: number;
+  likes: number;
 };
 

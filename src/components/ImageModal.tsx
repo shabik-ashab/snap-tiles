@@ -1,9 +1,11 @@
+import { ImageData } from "./GetImage";
+
 function ImageModal({
   image,
   handleClick,
   handleNext
 }: {
-  image: ImageData | {};
+  image: ImageData ;
   handleClick: Function;
   handleNext: Function;
 }) {

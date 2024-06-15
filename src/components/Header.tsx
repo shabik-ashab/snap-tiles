@@ -3,12 +3,13 @@ import Search from "./Search";
 
 export const Header = () => {
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-200 shadow-lg">
       <div className="flex-1">
         <a className="btn btn-ghost text-xl">SnapTiles</a>
-      </div>
-      <div className="flex-none gap-2">
         <Search />
+      </div>
+      
+      <div className="flex-none  gap-2">   
         <div className="dropdown dropdown-end">
           <div
             tabIndex={0}
