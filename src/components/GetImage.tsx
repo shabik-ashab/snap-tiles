@@ -30,19 +30,13 @@ const getCachedImages = unstable_cache(async (images) => newImages(images),['ima
 export const GetImage = async ({ query }: { query: string }) => {
   const data = await getImages(query);
   const images: ImageData[] = data.hits;
-
-  const getModalImage = async (id:number) => {
-    const newImages = await getCachedImages(images)
-    const image = newImages.find(newImages => newImages._id == id)
-    return image
-  }
-
+  const cachedImages = await getCachedImages(images)
 
   return (
     <div className="">
       <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-5 ">
-        {images.map((image) => (
-          <Tile key={image.id} image={image}  />
+        {cachedImages.map((image) => (
+          <Tile key={image.id} image={image} cachedImages={cachedImages}  />
         ))}
       </div>
     </div>

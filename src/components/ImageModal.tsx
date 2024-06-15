@@ -1,27 +1,36 @@
-import React from "react";
-
-function ImageModal({ image }: { image: ImageData }) {
+"use clients";
+function ImageModal({
+  image,
+  handleClick,
+}: {
+  image: ImageData | {};
+  handleClick: Function;
+}) {
+  console.log("modal", image);
+  if (!image) {
+    return <>loading...</>;
+  }
   return (
     <>
-      <dialog id="my_modal_3" className="modal">
-        <div className="modal-box">
-          <form method="dialog">
-            {/* if there is a button in form, it will close the modal */}
-            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+      <div className="fixed inset-0 backdrop-blur-sm flex justify-center w-50 items-center z-50">
+        <div className="card w-2/3 h-2/3 bg-base-100 shadow-xl">
+          <div className="card-body">
+            <button
+              onClick={() => handleClick()}
+              className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+            >
               ✕
             </button>
-          </form>
-          <h3 className="font-bold text-lg">Hello!</h3>
-          <div>
-            <img
-              src={image.webformatURL}
-              alt={image.tags}
-              className="object-cover object-center w-full max-w-full rounded-lg"
-            />
           </div>
-          <p className="py-4">Press ESC key or click on ✕ button to close</p>
+          <figure >
+          <img
+            src={image.webformatURL}
+            alt={image.tags}
+            className="object-cover object-center w-full h-full rounded-lg"
+          />
+          </figure>
         </div>
-      </dialog>
+      </div>
     </>
   );
 }
