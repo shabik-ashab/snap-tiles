@@ -2,6 +2,7 @@ import { GetImage } from "@/components/GetImage";
 import { Header } from "@/components/Header";
 import { Suspense } from "react";
 import Loading from "./Loading";
+import Footer from "@/components/Footer";
 
 export default function Home({
   searchParams,
@@ -15,11 +16,12 @@ export default function Home({
   return (
     <main >
       <Header />
-      <div className=" md:p-10">
+      <div className="min-h-screen md:p-10">
         <Suspense key={query} fallback={<Loading />}>
           <GetImage query={query} />
         </Suspense>     
-      </div>     
+      </div>   
+      <Footer /> 
     </main>
   );
 }

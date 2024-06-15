@@ -20,11 +20,11 @@ function Search() {
 
   return (
     <div className="w-4/5  md:w-2/5 md:ml-16">
-      <form className="form-control w-full">
+      <form className="form-control   w-full">
         <input
           type="text"
           placeholder="Search"
-          className="input input-bordered w-24 md:w-auto"
+          className="input bg-ghost-400 input-bordered w-24 md:w-auto"
           onChange={(e) => {
             handleSearch(e.target.value);
           }}

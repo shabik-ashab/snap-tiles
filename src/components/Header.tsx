@@ -3,7 +3,7 @@ import Search from "./Search";
 
 export const Header = () => {
   return (
-    <div className="navbar bg-base-200 shadow-lg">
+    <div className="navbar bg-base-400 shadow-lg">
       <div className="flex-1">
         <a className="btn btn-ghost text-xl">SnapTiles</a>
         <Search />
