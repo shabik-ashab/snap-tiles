@@ -17,6 +17,7 @@ const Tile: React.FC<TileProps> = ({ image, cachedImages }) => {
   const [overflow, setOverflow] = React.useState(false)
 
   const handleClick = (id?:number) => {
+    console.log(id)
     if(id){
       const modalImage = cachedImages.find(image => image._id == id)!
       setModalImage(modalImage)
