@@ -20,6 +20,7 @@ export default function Home({
         <Suspense key={query} fallback={<Loading />}>
           <GetImage query={query} />
         </Suspense>     
+        {/* <NewModal /> */}
       </div>   
       <Footer /> 
     </main>
