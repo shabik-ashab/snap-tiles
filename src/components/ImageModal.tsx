@@ -7,9 +7,6 @@ function ImageModal({
   handleClick: Function;
   handleNext: Function;
 }) {
-  if (!image) {
-    return <>loading...</>;
-  }
   return (
     <>
       <div className="fixed inset-0 backdrop-blur-sm flex justify-center items-center p-5 z-50">
