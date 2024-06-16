@@ -1,25 +1,22 @@
-"use client"
-// Define the type for the data we are using
-
-// Tile component using the defined type
 import React from "react";
 import { ImageData } from "./GetImage";
 
  interface TileProps {
+  index: number;
   image: ImageData;
   handleClick: Function;
 }
 
-const Tile: React.FC<TileProps> = ({ image, handleClick }) => {
+const Tile: React.FC<TileProps> = ({index, image, handleClick }) => {
   return (
     <div className="flex justify-center">
     <div className="card w-96 bg-base-100 shadow-xl">
       <figure>
-        <img onClick={async () => await handleClick(image.id)} src={image.webformatURL} alt={image.tags} className="object-cover object-center w-full h-40 max-w-full rounded-lg" />
-      </figure>
+      <img onClick={async () => await handleClick(index)} src={image.webformatURL} alt={image.tags} className="object-cover object-center w-full h-40 max-w-full rounded-lg hover:scale-125 transition-all duration-500 cursor-pointer" />
+
+        </figure>
       <div className="card-body">
         <h2 className="card-title">
-          Image!
           <div className="badge badge-secondary">{image.type}</div>
         </h2>
         <p>{image.tags}</p>
