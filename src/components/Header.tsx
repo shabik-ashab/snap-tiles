@@ -5,7 +5,7 @@ export const Header = () => {
   return (
     <div className="navbar bg-neutral shadow-lg">
       <div className="flex-1">
-        <a className="btn btn-ghost text-xl">SnapTiles</a>
+        <a className="btn btn-ghost text-slate-100 text-xl">SnapTiles</a>
         <Search />
       </div>
       
