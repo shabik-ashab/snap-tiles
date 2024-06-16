@@ -2,6 +2,7 @@ import React from "react";
 import getImages from "@/lib/getImages";
 import Tile from "./Tile";
 import { unstable_cache } from 'next/cache';
+import LightBox from "./Lightbox";
 
 
 const newImages = (images:ImageData[]):ImageData[] => {
@@ -33,11 +34,7 @@ export const GetImage = async ({ query }: { query: string }) => {
 
   return (
     <div className="">
-      <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-5 ">
-        {cachedImages.map((image) => (
-          <Tile key={image.id} image={image} cachedImages={cachedImages}  />
-        ))}
-      </div>
+      <LightBox images={cachedImages} />
     </div>
   );
 };
